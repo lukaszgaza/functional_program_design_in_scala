@@ -1,1 +1,3 @@
-# functional_program_design_in_scala
+# Functional Program Design in Scala
+
+Solutions of exercises of Coursera's course.
