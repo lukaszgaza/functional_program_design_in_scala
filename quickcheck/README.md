@@ -5,7 +5,7 @@
 Exercise: Quickcheck
 -----------------------------
 
-In this assignment, you will work with the ScalaCheck library for automated specification-based testing.
+In this assignment, you will work with the [ScalaCheck](https://github.com/rickynils/scalacheck/blob/master/doc/UserGuide.md) library for automated specification-based testing.
 
 You’re given several implementations of a purely functional data structure: a heap, which is a priority queue supporting operations insert, meld, findMin, deleteMin. Here is the interface:
 ```
