@@ -21,7 +21,7 @@ trait Heap {
   def deleteMin(h: H): H // a heap resulting from deleting a minimum of h
 }
 ```
-All these operations are pure; they never modify the given heaps, and may return new heaps. This purely functional interface is taken from Brodal & Okasaki’s paper, Optimal Purely Functional Priority Queues.
+All these operations are pure; they never modify the given heaps, and may return new heaps. This purely functional interface is taken from Brodal & Okasaki’s paper, [Optimal Purely Functional Priority Queues](http://www.brics.dk/RS/96/37/BRICS-RS-96-37.pdf).
 
 Here is what you need to know about priority queues to complete the assignment. In a nutshell, a priority queue is like a queue, except it's not first-in first-out, but whatever-in minimum-out. Starting with the empty queue, you can construct a new non-empty bigger queue by recursively inserting an element. You can also meld two queues, which results in a new queue that contains all the elements of the first queue and all the elements of the second queue. You can test whether a queue is empty or not with isEmpty. If you have a non-empty queue, you can find its minimum with findMin. You can also get a smaller queue from a non-empty queue by deleting the minimum element with deleteMin.
 
@@ -56,7 +56,7 @@ lazy val genMap: Gen[Map[Int,Int]] = oneOf(
 ```
 In order to get full credit, all tests should pass, that is you should correctly identify each buggy implementation while only writing properties that are true of heaps. You are free to write as many or as few properties as you want in order to achieve a full passing suite.
 
-Hints
+### Hints
 
 Here are some possible properties we suggest you write.
 * If you insert any two elements into an empty heap, finding the minimum of the resulting heap should get the smallest of the two elements back.
