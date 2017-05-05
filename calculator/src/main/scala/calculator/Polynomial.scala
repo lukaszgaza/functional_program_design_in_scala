@@ -9,7 +9,7 @@ object Polynomial {
 
   def computeSolutions(a: Signal[Double], b: Signal[Double],
       c: Signal[Double], delta: Signal[Double]): Signal[Set[Double]] = {
-    val deltaRoot = math.sqrt(delta())
-    Signal(Set((-b() - deltaRoot)/(2 * a()), (-b() + deltaRoot)/(2 * a())))
+    val deltaRoot = Signal(math.sqrt(delta()))
+    Signal(Set((-b() - deltaRoot())/(2 * a()), (-b() + deltaRoot())/(2 * a())))
   }
 }
