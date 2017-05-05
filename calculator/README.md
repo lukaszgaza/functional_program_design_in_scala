@@ -7,7 +7,7 @@ Exercise: Calculator
 
 In this assignment, you will use Function Reactive Programming (FRP), with the Signal[A] class that you have seen in the lectures, to implement a spreadsheet-like calculator. In this calculator, cells can depend on the value of other cells, and are recomputed automatically when the latter change.
 
-The User Interface (UI) for the programs in this assignment are Web-based, i.e., they run in an HTML page in your Web browser. To compile your code to runnable JavaScript, we use Scala.js, the Scala to JavaScript compiler. We have all set it up for you in the assignment template, but this will change the way you run the program.
+The User Interface (UI) for the programs in this assignment are Web-based, i.e., they run in an HTML page in your Web browser. To compile your code to runnable JavaScript, we use [http://www.scala-js.org/](Scala.js), the Scala to JavaScript compiler. We have all set it up for you in the assignment template, but this will change the way you run the program.
 
 Tweet length monitoring
 
