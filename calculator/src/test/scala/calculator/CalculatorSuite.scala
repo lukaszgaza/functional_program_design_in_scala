@@ -60,4 +60,39 @@ class CalculatorSuite extends FunSuite with ShouldMatchers {
     val roots = Polynomial.computeSolutions(Var(1), Var(-5), Var(6), Var(1))
     assert(roots() == Set(2.0, 3.0))
   }
+
+  test("eval1") {
+    val res = Calculator.eval(Times(Literal(2.0), Literal(3.0)), Map.empty)
+    assert(res == 6)
+  }
+
+  test("eval2") {
+    val res = Calculator.eval(Times(Ref("a"), Ref("b")), Map("a" -> Var(Literal(3.0)), "b" -> Var(Literal(2.0))))
+    assert(res == 6)
+  }
+
+  test("eval3") {
+    val res = Calculator.eval(Ref("a"), Map("a" -> Var(Plus(Ref("b"), Literal(3.0))), "b" -> Var(Plus(Ref("a"), Literal(3.0)))))
+    assert(res.isNaN)
+  }
+
+  test("compute values") {
+    val res = Calculator.computeValues(Map("a*b" -> Signal(Times(Ref("a"), Ref("b"))),
+      "a" -> Var(Literal(4.0)),
+      "b" -> Var(Literal(5.0))))
+
+    assert(res("a*b")() == 20.0)
+    assert(res("a")() == 4.0)
+    assert(res("b")() == 5.0)
+  }
+
+  test("self reference") {
+    val res = Calculator.computeValues(Map("a*b" -> Signal(Times(Ref("a"), Ref("b"))),
+      "a" -> Var(Literal(4.0)),
+      "b" -> Var(Literal(5.0))))
+
+    assert(res("a*b")() == 20.0)
+    assert(res("a")() == 4.0)
+    assert(res("b")() == 5.0)
+  }
 }
